@@ -59,21 +59,24 @@ function transaccion(camiseta){
     }
 }
 
-function seleccionTalle(talla){
-    switch(talla){
-        case "S":
-            break
-        case "M":
-            break
-        case "L":
-            break
-        case "XL":
-            break
-        default:
-            alert("Talle no disponible")
-            break
-    }
-}
+
+
+
+// function seleccionTalle(talla){
+//     switch(talla){
+//         case "S":
+//             break
+//         case "M":
+//             break
+//         case "L":
+//             break
+//         case "XL":
+//             break
+//         default:
+//             alert("Talle no disponible")
+//             break
+//     }
+// }
 
 
 
