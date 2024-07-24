@@ -115,10 +115,6 @@ while(bandera){
 
     transaccion(equipoElegido)
 
-    const talleElegido = prompt("indique el talle que desea comprar \n\n ■ " + talles.join("\n ■ ")).toUpperCase()
-
-    seleccionTalle(talleElegido)
-
     bandera = confirm("¿Desea seguir comprando?")
 }    
 
