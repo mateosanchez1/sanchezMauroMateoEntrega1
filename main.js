@@ -1,13 +1,24 @@
 
-let bienvenida = alert("Bienvenido/a a nuestra tienda de camisetas de futbol retro")
-
 let bandera = true
 const camisetas = ["Milan", "Inter","Argentina","Arsenal","Manchester United", "Napoli"]
-const talles = ["S","M","L","XL", "2XL"]
+const talles = ["S","M","L","XL"]
 const mediosPago = ["Tarjeta de credito", "Transferencia", "Efectivo"]
 let total = 0
 let compra = []
 let cantidad = 1
+
+const nombre = prompt("Por favor ingrese su nombre");
+
+function bienvenida(nombres) {
+    if (nombres === "" || nombres === null) { 
+        alert("Ingrese su nombre por favor");
+        bienvenida(prompt("Por favor ingrese su nombre"));
+    } else {
+        alert("Bienvenido " + nombres + " a nuestra tienda de camisetas retro");
+    }
+}
+
+bienvenida(nombre);
 
 function sumaTotal (producto,precio ,cantidad = 1,){
     compra.push("se ha añadido " + cantidad + " camiseta de " + producto + "  a la compra")
@@ -19,27 +30,27 @@ function transaccion(camiseta){
     cantidad = 1 
     switch(camiseta){
         case "milan":
-            cantidad = prompt("indique la cantidad de camisetas del " + camiseta + " que desea comprar")
+            cantidad = parseInt(prompt("indique la cantidad de camisetas del " + camiseta + " que desea comprar"))
             sumaTotal (camiseta, 100 , cantidad)
                 break;
         case "inter":
-            cantidad = prompt("indique la cantidad de camisetas del " + camiseta + " que desea comprar")
+            cantidad = parseInt(prompt("indique la cantidad de camisetas del " + camiseta + " que desea comprar"))
             sumaTotal (camiseta, 120, cantidad)
                 break;    
         case "argentina":
-            cantidad = prompt("indique la cantidad de camisetas del " + camiseta + " que desea comprar")
+            cantidad = parseInt(prompt("indique la cantidad de camisetas del " + camiseta + " que desea comprar"))
             sumaTotal (camiseta, 100, cantidad)
                 break;
         case "arsenal":
-            cantidad = prompt("indique la cantidad de camisetas del " + camiseta + " que desea comprar")
+            cantidad = parseInt(prompt("indique la cantidad de camisetas del " + camiseta + " que desea comprar"))
             sumaTotal (camiseta, 100, cantidad)
                 break;
         case "manchester united":
-            cantidad = prompt("indique la cantidad de camisetas del " + camiseta + " que desea comprar")
+            cantidad = parseInt(prompt("indique la cantidad de camisetas del " + camiseta + " que desea comprar"))
             sumaTotal (camiseta, 100, cantidad)
                 break;
         case "napoli":
-            cantidad = prompt("indique la cantidad de camisetas del " + camiseta + " que desea comprar")
+            cantidad = parseInt(prompt("indique la cantidad de camisetas del " + camiseta + " que desea comprar"))
             sumaTotal (camiseta, 100, cantidad)
                 break;
         default:
@@ -48,6 +59,24 @@ function transaccion(camiseta){
     }
 }
 
+function seleccionTalle(talla){
+    switch(talla){
+        case "S":
+            break
+        case "M":
+            break
+        case "L":
+            break
+        case "XL":
+            break
+        default:
+            alert("Talle no disponible")
+            break
+    }
+}
+
+
+
 function metodoPago(medio){
     if(medio === "efectivo"){
         alert("Acercarse a la tienda mas cercana a pagar")
@@ -55,6 +84,7 @@ function metodoPago(medio){
     alert("el total de compra es de " + total)
     bandera = !confirm("¿confirma la compra?")
 }
+
 
 
 function pago(medio){
@@ -82,10 +112,14 @@ while(bandera){
 
     transaccion(equipoElegido)
 
+    const talleElegido = prompt("indique el talle que desea comprar \n\n ■ " + talles.join("\n ■ ")).toUpperCase()
+
+    seleccionTalle(talleElegido)
+
     bandera = confirm("¿Desea seguir comprando?")
 }    
 
-let compraTotal = alert(total)
+let compraTotal = alert( "El monto total de compra es de " + total)
 
 alert(compra.join("\n"))
 
